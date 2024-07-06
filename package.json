@@ -4,7 +4,7 @@
   "description": "Todo application",
   "main": "index.js",
   "scripts": {
-    "dev": "index.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "todo",
