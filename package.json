@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "todo_backend",
   "version": "1.0.0",
   "description": "Todo application",
