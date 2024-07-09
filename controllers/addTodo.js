@@ -1,16 +1,19 @@
-import Todo from "../models/todo";
+import Todo from "../models/todo.js";
 
 export const addTodo = async (req, res) => {
-
-  const { task } = await req.json();
   try {
-    if(!task){
-        res.status(400).json({"Provide any message"})
-      }
+    // console.log(req.body);
+    const { task } = req.body;
+
+    if (!task) {
+      return res.status(400).json({ error: "Please provide a task." });
+    }
+
     const todo = await Todo.create({ task, completed: false });
-    res.status(200).json(todo);
+
+    res.status(201).json(todo); // Use 201 Created for successful creation
   } catch (error) {
-    console.log("Error in adding Todo")
+    console.error("Error adding todo:", error); // Log the error for debugging
+    res.status(500).json({ error: "An error occurred while adding the todo." });
   }
- 
 };
