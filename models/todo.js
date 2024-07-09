@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema({
-  text: {
+  task: {
     type: String,
-    required: true,
+    required: [true, "Please provide any task or message"],
   },
   completed: Boolean,
 });
