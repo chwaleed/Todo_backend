@@ -6,7 +6,10 @@ const todoSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide any task or message"],
     },
-    completed: Boolean,
+    completed: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

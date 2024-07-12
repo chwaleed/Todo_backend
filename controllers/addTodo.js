@@ -8,7 +8,7 @@ export const addTodo = async (req, res) => {
       return res.status(400).json({ error: "Please provide a task." });
     }
 
-    const todo = await Todo.create({ task, completed: false });
+    const todo = await Todo.create({ task });
     const saveTodo = todo.save();
     res.status(201).json(todo); // Use 201 Created for successful creation
   } catch (error) {
