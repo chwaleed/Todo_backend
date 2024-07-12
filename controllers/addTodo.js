@@ -1,9 +1,9 @@
+/* eslint-disable no-unused-vars */
 import Todo from "../models/todo.js";
 
 export const addTodo = async (req, res) => {
   try {
-    // console.log(req.body);
-    const { task } = req.body;
+    const { task } = await req.body;
 
     if (!task) {
       return res.status(400).json({ error: "Please provide a task." });
