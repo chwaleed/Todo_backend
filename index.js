@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import "dotenv/config";
 import express from "express";
 import { Connect } from "./dbconfig.js";
@@ -17,7 +18,8 @@ app.use(express.json());
 
 //api endpoints
 app.use("/api/todo", router);
-app.use("/api/todo/getTodo", router);
+app.use("/api/todo", router);
+app.use("/api/todo", router);
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server listening on port", process.env.PORT || 5000);
 });

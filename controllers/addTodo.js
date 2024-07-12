@@ -4,7 +4,6 @@ import Todo from "../models/todo.js";
 export const addTodo = async (req, res) => {
   try {
     const { task } = await req.body;
-
     if (!task) {
       return res.status(400).json({ error: "Please provide a task." });
     }

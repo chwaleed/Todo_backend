@@ -7,6 +7,6 @@ const router = Router();
 
 router.post("/addTodo", addTodo);
 router.get("/getTodo", getTodo);
-router.get("/removeTodo", removeTodo);
+router.delete("/removeTodo", removeTodo);
 
 export default router;
