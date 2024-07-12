@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
 import "dotenv/config";
 import mongoose from "mongoose";
 
 export async function Connect() {
   try {
+    // eslint-disable-next-line no-unused-vars
     const connection = await mongoose.connect(process.env.MONGO_URL);
     console.log("MongoDB database connection established successfully");
 
